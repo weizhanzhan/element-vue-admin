@@ -25,7 +25,7 @@ class User {
             if(data.state){
                 this.get_info()
                 Message.success(data.msg)
-                router.push('/start')
+                router.push('/')
             }     
         })
         .catch(error=>{

@@ -45,11 +45,7 @@ export const constantRouterMap =[
         component:()=>import('../pages/login/register'),
         name:"zhuce"
     },
-    {
-        path:'*',
-        hidden: true,
-        redirect:'/'
-    },
+  
 ]
 export default new VueRouter({
     routes:constantRouterMap,
@@ -188,6 +184,11 @@ export const asyncRouterMap = [
                 },
             }
         ]
+    },
+    {
+        path:'*',
+        hidden: true,
+        redirect:'/'
     },
 
 ]
