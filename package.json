@@ -12,12 +12,12 @@
   "dependencies": {
     "ant-design-vue": "^1.1.7",
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "element-ui": "^2.4.5",
     "js-cookie": "^2.2.0",
     "vue": "^2.5.2",
     "vue-qr": "^1.5.2",
     "vue-router": "^3.0.1",
-  
     "vuex": "^3.0.1"
   },
   "devDependencies": {

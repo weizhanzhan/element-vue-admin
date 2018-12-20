@@ -1,21 +1,11 @@
-# blog-admin
+# umi-admin
+利用Vue2.0+vue-router+axios+vuex+ant-design-vue 后台管理系统
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 已实现
+<ul>
+    <li>用户权限校验</li>
+    <li>路由校验拦截</li>
+    <li>博客管理</li>
+    <li>用户管理</li>
+    <li>插件分享</li>
+</ul>
