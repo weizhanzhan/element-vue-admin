@@ -16,7 +16,7 @@ Toast.install = function (Vue, options){
         }
    
         let toastTpl = Vue.extend({
-            template:`<div class="vue-toast toast-${type}">wewe</div>`
+            template:`<div class="vue-toast toast-${type}">${tips}</div>`
         });
     
        let tpl = new toastTpl().$mount().$el; //获取挂载的dom

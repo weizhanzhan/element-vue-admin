@@ -25,12 +25,14 @@ Vue.directive('date',(el,binding)=>{
 })
 
 //测试插件
+import './Plugin/style/index.css' //插件全局样式
 
 import Toast from './Plugin/toast/lib'
-import './Plugin/toast/lib/toast.css'
-Vue.use(Toast)
+import Dialog from './Plugin/dialog/lib'
 import Test from './Plugin/test/lib'
+Vue.use(Toast)
 Vue.use(Test)
+Vue.use(Dialog)
 
 /////////////
 

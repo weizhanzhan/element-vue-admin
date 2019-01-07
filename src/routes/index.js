@@ -182,6 +182,24 @@ export const asyncRouterMap = [
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
+            },
+            {
+                path:'/grocery/dialog',
+                name:"Dialog",
+                component:()=>import('../pages/GroceryShop/dialog'),
+                meta: {
+                    roles: ['admin','user'] ,
+                    icon:'el-icon-printer'
+                },
+            },
+            {
+                path:'/grocery/merry-go-round',
+                name:"旋转木马",
+                component:()=>import('../pages/GroceryShop/merry-go-round'),
+                meta: {
+                    roles: ['admin','user'] ,
+                    icon:'el-icon-printer'
+                },
             }
         ]
     },

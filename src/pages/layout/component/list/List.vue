@@ -13,7 +13,8 @@
             :key="route.name" 
             :index="route.path" 
             :route="route" 
-            v-if="!route.hidden">
+            v-if="!route.hidden"
+        >
         </item>
     </el-menu>
   </div>
