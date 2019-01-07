@@ -1,8 +1,20 @@
 <template>
   <div class="list" :style="[changed_color]">
-    <el-menu :default-active="defaultActive" class="el-menu-vertical-demo el-boder" :collapse="leftMenuStatus"
-      :background-color="menu_color" text-color="#fff" active-text-color="#ffd04b" @select="changeRoute">
-      <item v-for="route in permission_routers" :key="route.name" :index="route.path" :route="route" v-if="!route.hidden"></item>
+    <el-menu 
+        :default-active="defaultActive" 
+        class="el-menu-vertical-demo el-boder" 
+        :collapse="leftMenuStatus"
+        :background-color="menu_color" 
+        text-color="#fff" 
+        active-text-color="#ffd04b" 
+        @select="changeRoute" >
+        <item 
+            v-for="route in permission_routers" 
+            :key="route.name" 
+            :index="route.path" 
+            :route="route" 
+            v-if="!route.hidden">
+        </item>
     </el-menu>
   </div>
 </template>
