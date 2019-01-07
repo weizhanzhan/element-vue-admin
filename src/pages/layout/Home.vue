@@ -58,15 +58,12 @@ export default {
      watch:{
          '$route':{
              handler(){
-                console.log(this.$route)
+             
                 let matched = this.$route.matched.filter(item => item.name)
             
                 let firstName=matched[0]
               
-                // if(this.levelList.length>0){
-                // let firstName=this.levelList[0]
-                // console.log(firstName.name)
-                // }
+        
                 this.levelList=[]
                 if(firstName.name=='主页'){
                    

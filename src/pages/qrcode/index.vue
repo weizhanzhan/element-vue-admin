@@ -33,7 +33,7 @@ export default {
     },
     methods:{
         test(dataUrl,id){
-            console.log(dataUrl, id)
+           
         },
         generate(){
             this.text=this.input

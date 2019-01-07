@@ -21,7 +21,7 @@ class User {
     }
      go_login() {
         store.dispatch('Login',qs.stringify(this.user)).then(data=>{
-            console.log(data)
+
             if(data.state){
                 this.get_info()
                 Message.success(data.msg)
@@ -33,7 +33,7 @@ class User {
         })
     }
     get_info() {
-        console.log("get info")
+
     }
 }
 

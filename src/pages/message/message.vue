@@ -75,11 +75,11 @@ import { getMessage } from '@/api/user'
           })
       },
       handleEdit(index, row) {
-        console.log(index, row);
+       
         this.edit_data=row
       },
       handleDelete(index, row) {
-        console.log(index, row);
+     
       },
       handleCheck(){
 

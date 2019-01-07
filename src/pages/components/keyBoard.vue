@@ -86,14 +86,14 @@
     created() {
       getMine()
         .then(data => {
-          console.log(data)
+      
         })
         .catch(err => {
-          console.log(err)
+         
         })
     },
     mounted(){
-        console.log(this)
+   
 
         let keyboard =document.getElementById('keyboard')
       

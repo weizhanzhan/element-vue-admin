@@ -49,7 +49,7 @@ export const constantRouterMap =[
 ]
 export default new VueRouter({
     routes:constantRouterMap,
-    mode:"history"
+  //  mode:"history"
 })
 export const asyncRouterMap = [
     {
@@ -58,7 +58,7 @@ export const asyncRouterMap = [
         component:Home,
         redirect:'users/guanli',
         meta: {
-            roles: ['admin','user'], // you can set roles in root nav
+            roles: ['admin'], // you can set roles in root nav
             icon:'el-icon-menu'
         },
         children:[
@@ -67,7 +67,7 @@ export const asyncRouterMap = [
                 name:"用户管理",
                 component:User,
                 meta: {
-                    roles: ['admin','user'] ,// you can set roles in root nav
+                    roles: ['admin'] ,// you can set roles in root nav
                     icon:'el-icon-bell'
                 }
             }       

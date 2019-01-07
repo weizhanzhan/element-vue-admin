@@ -62,7 +62,7 @@ export default {
             this.$store.dispatch('changeMenuStatus',!this.leftMenuStatus)
         },
         logout() {
-            console.log(123)
+       
             this.$store.dispatch('logout').then(data=>{
                 location.reload()
             })
