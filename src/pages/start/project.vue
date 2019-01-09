@@ -1,96 +1,76 @@
 <template>
-    <div class="project">
-        <div class="project-title">现有项目</div>
-        <div id="project-content" style="padding:10px">
-
-  <el-carousel :interval="5000" arrow="always" type="card">
-    <el-carousel-item v-for="item in 40" :key="item">
-     
-        <a-card title="美团webapp" style="height:300px">
-            <p>一个基于Vue2.0的webapp</p>
-            <p><a href="http://111.231.59.56/meituan/meituan.html" target="view_window">查看</a></p>
-        </a-card>
-          
-    </el-carousel-item>
-  </el-carousel>
-
-            <!-- <div class="project-item">woshi</div>
-            <div class="project-item">woshi</div>
-            <div class="project-item">woshi</div>
-            <div class="project-item">woshi</div>
-            <div class="project-item">woshi</div>
-            <div class="project-item">woshi</div> -->
-            <div class="clear"></div>
+  <div class="project">
+    <div class="project-title">进行中的项目</div>
+    <div id="project-content" style="">
+      <a-card class="card-item" v-for="n in 6" :key="n">
+        <p>
+          <a-avatar style="color: #f56a00; backgroundColor: #fde3cf">U</a-avatar>Vue
+        </p>
+        <p>那是一种内在的东西， 他们到达不了，也无法触及的</p>
+        <div>
+          <a-row>
+            <a-col :span="8">搬砖族</a-col>
+            <a-col :span="6" :offset="10">2小时前</a-col>
+          </a-row>
         </div>
+      </a-card>
+      <div style="clear:both"></div>
+
+
     </div>
+  </div>
 </template>
 
 <script>
-export default {
+  export default {
 
-}
+  }
+
 </script>
 
 <style>
-.ant-card-head {
-    background: #eee;
-    }
- .el-carousel__item h3 {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 300px;
-    margin: 0;
-  }
-  
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-  
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
-a:active{
-    text-decoration: none
-}
-a:hover{
-   
-    text-decoration: none
-}
-.project{
+  .project {
     background: #ffffff;
     position: relative;
     width: 100%;
-}
-.project-title{
-    padding: 0.5rem;
-    border-bottom: 1px solid #eeeeee
+  }
+  .project-title {
+    padding: 20px;
 
-}
-.project-content{
-    
+  }
+  .project-content {
     width: 100%;
     display: flex;
     height: auto;
+  }
 
-}
-.project-item{
-  
-   float: left;
-    width: 33.3%;
-    padding:0.2rem
-   
-}
-.project-item:hover{
-    animation: scaleanimation 0.5s;
-    animation-fill-mode: forwards;
-  
-}
-@keyframes scaleanimation {
-    0% {
-        transform: scale(1.0);}
-    100%{
-        transform: scale(1.02);}
-}
-.clear{ clear:both} 
+  .card-item {
+    width: 33.33%;
+    float: left;
+    border: 0;
+    box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, inset 1px 0 0 0 #e8e8e8, inset 0 1px 0 0 #e8e8e8;
+  }
+
+
+  .card-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15), 0 2px 8px rgba(0, 0, 0, .15), 0 2px 8px rgba(0, 0, 0, .15), inset 1px 0 0 0 #e8e8e8, inset 0 1px 0 0 #e8e8e8;
+    z-index: 1;
+  }
+  @media screen and (max-width: 900px){
+      .card-item {
+            width: 50%;
+            float: left;
+            border: 0;
+            box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, inset 1px 0 0 0 #e8e8e8, inset 0 1px 0 0 #e8e8e8;
+        }
+  }
+   @media screen and (max-width: 500px){
+      .card-item {
+            width: 100%;
+            float: left;
+            border: 0;
+            box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, inset 1px 0 0 0 #e8e8e8, inset 0 1px 0 0 #e8e8e8;
+        }
+  }
+
 </style>

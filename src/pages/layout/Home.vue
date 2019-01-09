@@ -1,9 +1,9 @@
 <template>
     <div style="display:flex;">
         <menu-list></menu-list>
-        <el-container style="min-height: 100vh" >
+        <el-container style="min-height:100vh" >
             <el-header style="text-align: right; font-size: 12px;padding:0;box-shadow: 0 1px 4px rgba(0,21,41,.08);">
-                <menu-header style="width:100%"></menu-header>   
+                <menu-header ></menu-header>   
             </el-header>
             <div style="width:100%;background-color: #eee;margin-top:12px">
                 <el-row style="padding:12px 0 12px 24px;background:#ffffff">
@@ -19,8 +19,8 @@
                         </el-breadcrumb>
                     </el-col>
                 </el-row> 
-                <el-row >
-                    <el-col :span="24" v-loading="loading"> 
+                <el-row style="background:#f0f2f5;">
+                    <el-col :span="24" v-loading="loading" > 
                         <router-view ></router-view>
                      </el-col>
                 </el-row>

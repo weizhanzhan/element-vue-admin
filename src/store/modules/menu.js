@@ -1,7 +1,7 @@
 const menu = {
     state : {
         left_menu_status:false,
-        menu_color:"#333744"
+        menu_color:"#001529"
     },
     mutations : {
         CHANGE_LEFT_STATUS (state,status) {

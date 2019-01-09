@@ -8,7 +8,7 @@ import ElementUI from 'element-ui'
 
 
 
-import { Avatar, Card ,icon} from 'ant-design-vue'
+import { Avatar, Card ,icon,Row,Col,Carousel,Tooltip} from 'ant-design-vue'
 
 import 'element-ui/lib/theme-chalk/index.css'	
 import './assets/iconfont.css'
@@ -20,6 +20,10 @@ Vue.use(ElementUI)
 Vue.use(Card)
 Vue.use(Avatar)
 Vue.use(icon)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Carousel)
+Vue.use(Tooltip)
 Vue.directive('date',(el,binding)=>{
   el.innerHTML=new Date(binding.value).Format("yyyy-MM-dd hh:mm:ss")
 })
