@@ -28,6 +28,10 @@ Vue.directive('date',(el,binding)=>{
   el.innerHTML=new Date(binding.value).Format("yyyy-MM-dd hh:mm:ss")
 })
 
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+// use
+Vue.use(mavonEditor)
 //测试插件
 import './Plugin/style/index.css' //插件全局样式
 

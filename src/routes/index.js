@@ -8,6 +8,7 @@ import Message from '../pages/message/message'
 import Category from '../pages/blogs/categories'
 import info from '../pages/info'
 import Login from '../pages/Login'
+import WriteBlogs from '../pages/blogs/write'
 
 Vue.use(VueRouter)
 
@@ -100,7 +101,16 @@ export const asyncRouterMap = [
                     roles: ['admin','user'] ,
                     icon:'el-icon-date'
                 },
-            }
+            },
+            {
+                path:"/blogs/write",
+                name:"写博客",
+                component:WriteBlogs,
+                meta: {
+                    roles: ['admin'],
+                    icon:'el-icon-news'
+                },
+            },
         ]
     },
     {
@@ -196,6 +206,15 @@ export const asyncRouterMap = [
                 path:'/grocery/merry-go-round',
                 name:"旋转木马",
                 component:()=>import('../pages/GroceryShop/merry-go-round'),
+                meta: {
+                    roles: ['admin','user'] ,
+                    icon:'el-icon-printer'
+                },
+            },
+            {
+                path:'/grocery/form',
+                name:'Form',
+                component:()=>import('../pages/GroceryShop/form'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
