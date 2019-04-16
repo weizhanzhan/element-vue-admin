@@ -10,13 +10,18 @@
              <h1>FormComponents组件表单：</h1>
             <FormComponents :options="formOptions" @handleValueChange = "handleValueChange" @handleSubmit = "handleSubmit"/>
         </div>
+        <div>
+             <h1>element Form 组件表单：</h1>
+            <ElFrom :options="formOptions" @handleValueChange = "handleValueChange" @handleSubmit = "handleSubmit"/>
+        </div>
     </div>
 </template>
 
 <script>
 import FormComponents from './components/form-components'
+import ElFrom from './components/el-form-components'
 export default {
-    components:{ FormComponents },
+    components:{ FormComponents, ElFrom },
     data() {
         return {
             formOptions:[
@@ -24,12 +29,17 @@ export default {
                     componentName:'el-input',
                     name:'name',
                     value:'123',
-                    label:'名称'
+                    label:'名称',
+                    span:8,
+                    rules:[
+                        { required: true, message: '请输入邮箱地址', trigger: 'blur' },
+                        { type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur,change' }
+                    ]
                 },
                 {
                     componentName:'el-input',
                     name:'age',
-                    value:'123',
+                    value:'123dsd',
                     label:'年龄'
                 },
                 
@@ -54,19 +64,30 @@ export default {
                     name:'date',
                     type:'date',
                     value:new Date(),
+                    format:'yyyy-MM-dd',
                     label:'活动日期'
                 },
                 {
                     componentName:'el-date-picker',
                     name:'datetime',
                     type:'datetime',
+                    format:'yyyy-MM-dd HHH:mm:ss',
                     value:new Date(),
                     label:'活动日期时间'
+                },
+                {
+                    componentName:'el-date-picker',
+                    name:'start-end',
+                    format:'yyyy-MM-dd',
+                    value:new Date(),
+                    type:"daterange",
+                    label:'开始结束'
                 },
                 {
                     componentName:'el-time-picker',
                     name:'time',
                     value:new Date(),
+                    format:'yyyy-MM-dd HHH:mm:ss',
                     type:"fixed-time",
                     label:'具体时间'
                 },
@@ -74,7 +95,8 @@ export default {
                     componentName:'el-switch',
                     name:'switch',
                     value:false,
-                    label:'开启活动'
+                    label:'开启活动',
+                    default:false
                 },
                 {
                     componentName:'el-radio-group',
@@ -122,6 +144,7 @@ export default {
                         },
                     ],
                     value:[],
+                    default:[],
                     label:'线路选择'
                 },
                 {
@@ -136,6 +159,7 @@ export default {
     },
     methods:{
         handleValueChange(val,param,index){
+            console.log(val,param,index)
             this.formOptions[index].value = val
         },
         handleSubmit(val){

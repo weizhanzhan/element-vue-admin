@@ -1,13 +1,13 @@
 <template>
     <div v-if="options" class="wzform">
         <el-row :gutter="20">
-            <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="6" v-for="(item, index) in options" :key="index" class="wzform-wrapper">
+            <el-col :xs="24" :sm="12" :md="8" :lg="item.span?item.span:8" :xl="6" v-for="(item, index) in options" :key="index" class="wzform-wrapper">
                     <el-row>
-                        <el-col :span="6" style="text-align:center;line-height:40px">
+                        <el-col :span="6" :class="['wrapper-label' ,item.rules&&item.rules[0].required?'required':'']">
                             {{item.label}} :
                         </el-col>
                         <el-col :span="18">
-                            <components :is="item.componentName" :value="item.value" @input="inputChange($event,item,index)" class="wrapper-item" :type="item.type">
+                            <components :is="item.componentName" :value="item.value" @input="inputChange($event,item,index)" class="wrapper-item" :type="item.type" :rules="item.rules" :value-format="item.format">
                                 <template v-if="item.componentName=='el-select'">
                                     <el-option v-for="option in item.options" :key="option.value" :label="option.label" :value="option.value"></el-option>
                                 </template>
@@ -31,7 +31,12 @@
 
 <script>
 export default {
-    props:['options'],
+    props:{
+        options:{
+            type:Array,
+            default:[]
+        }
+    },
     methods:{
         inputChange(val,param,index){
             this.$emit('handleValueChange',val,param,index)       
@@ -45,11 +50,8 @@ export default {
         },
         onEmpty() {
             this.options.forEach((option,i)=>{
-                this.$emit('handleValueChange','',option,i)
+                this.$emit('handleValueChange',option.hasOwnProperty("default")?option.default:'',option,i)
             })
-        },
-        test(item){
-            console.log(item)
         }
     },
     mounted(){
@@ -65,6 +67,14 @@ export default {
 .wzform-wrapper{
     margin:10px 0;
      line-height: 40px
+}
+.wrapper-label{
+    text-align:center;
+    line-height:40px
+}
+.wrapper-label.required::before{
+    content: '*';
+    color:red
 }
 .wrapper-item{
     width:100%;
