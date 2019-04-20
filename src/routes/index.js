@@ -158,7 +158,7 @@ export const asyncRouterMap = [
   
     {
         path:"/grocery",
-        name:"杂货铺",
+        name:"组件",
         component:Home,
         redirect:'/plugin/index',
         meta: {
