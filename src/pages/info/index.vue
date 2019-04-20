@@ -22,6 +22,7 @@
             <a-avatar slot="avatar" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
           </a-card-meta>
         </a-card>
+        <Form :options="options" />
       </el-row>
     </el-main>
   </el-container>
@@ -31,11 +32,26 @@
   import {
     getMine
   } from '@/api/user'
+  import Form from './components/filter'
   export default {
+    components:{Form},
     data() {
       return {
     
-
+          options:{
+            form:[{
+              name: 'el-input',
+              value: '',
+              type: 'name'
+            }],
+            rules:{
+              name: [
+                { required: true, message: '请输入活动名称', trigger: 'blur' },
+                { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+              ]
+            }
+          },
+          
       }
     },
     methods: {
