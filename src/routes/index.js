@@ -219,6 +219,15 @@ export const asyncRouterMap = [
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
+            },
+            {
+                path:'/grocery/input-tree',
+                name:'inputTree',
+                component:()=>import('../pages/GroceryShop/input-tree'),
+                meta: {
+                    roles: ['admin','user'] ,
+                    icon:'el-icon-printer'
+                },
             }
         ]
     },
