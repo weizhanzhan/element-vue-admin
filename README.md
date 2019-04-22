@@ -1,4 +1,4 @@
-# vue-admin
+# Element-vue-admin
 ![Image text](https://github.com/weizhanzhan/vue-admin/blob/master/static/index.png)
 利用Vue2.0+vue-router+axios+vuex+ant-design-vue 后台管理系统
 # 演示地址
