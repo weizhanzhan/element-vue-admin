@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import Home from "../pages/layout/home"
 import User from "../pages/users/users"
 import Blogs from "../pages/blogs/blogs"
-import Message from '../pages/message/message'
+import Message from '../pages/leave-message/message'
 import Category from '../pages/blogs/categories'
 import info from '../pages/info'
 import Login from '../pages/Login'
@@ -169,7 +169,7 @@ export const asyncRouterMap = [
             {
                 path:'/grocery/toast',
                 name:"Toast插件",
-                component:()=>import('../pages/GroceryShop/pluginTest'),
+                component:()=>import('../pages/grocery-shop/pluginTest'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
@@ -178,7 +178,7 @@ export const asyncRouterMap = [
             {
                 path:'/grocery/Qr',
                 name:"二维码生成",
-                component:()=>import('../pages/qrcode'),
+                component:()=>import('../pages/grocery-shop/qrcode'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
@@ -187,7 +187,7 @@ export const asyncRouterMap = [
             {
                 path:'/grocery/keyboard',
                 name:"虚拟键盘",
-                component:()=>import('../pages/GroceryShop/keyBoard'),
+                component:()=>import('../pages/grocery-shop/keyBoard'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
@@ -196,7 +196,7 @@ export const asyncRouterMap = [
             {
                 path:'/grocery/dialog',
                 name:"Dialog",
-                component:()=>import('../pages/GroceryShop/dialog'),
+                component:()=>import('../pages/grocery-shop/dialog'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
@@ -205,7 +205,7 @@ export const asyncRouterMap = [
             {
                 path:'/grocery/merry-go-round',
                 name:"旋转木马",
-                component:()=>import('../pages/GroceryShop/merry-go-round'),
+                component:()=>import('../pages/grocery-shop/merry-go-round'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
@@ -214,7 +214,7 @@ export const asyncRouterMap = [
             {
                 path:'/grocery/form',
                 name:'Form',
-                component:()=>import('../pages/GroceryShop/form'),
+                component:()=>import('../pages/grocery-shop/form'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
@@ -223,7 +223,7 @@ export const asyncRouterMap = [
             {
                 path:'/grocery/input-tree',
                 name:'inputTree',
-                component:()=>import('../pages/GroceryShop/input-tree'),
+                component:()=>import('../pages/grocery-shop/input-tree'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'

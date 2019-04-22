@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import formDialog from '../base/formDialog'
+import formDialog from '../components/base/formDialog'
 import { getCategory } from '@/api/category'
   export default {
     data() {

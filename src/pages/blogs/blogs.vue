@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import VueDialog from '../base/dialog'
+import VueDialog from '../components/base/dialog'
 import { getBlog } from '@/api/blog'  
 export default {
     data(){

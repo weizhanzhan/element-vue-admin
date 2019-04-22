@@ -58,8 +58,8 @@
 </template>
 
 <script>
-import VueDialog from '../base/dialog'
-import formDialog from '../base/formDialog'
+import VueDialog from '../components/base/dialog'
+import formDialog from '../components/base/formDialog'
 import { getMessage } from '@/api/user'
   export default {
     data() {

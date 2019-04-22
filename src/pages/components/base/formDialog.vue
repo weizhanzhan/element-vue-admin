@@ -24,7 +24,7 @@
     </div>
 </template>
 
-<script>
+<script> 
 import Upload from './upload'
 export default {
     props:["show_data"],
