@@ -26,8 +26,8 @@ import qs from 'qs'
 export default {
     data(){
         return {
-            email:'',
-            password:"",
+            email:'375786117@qq.com',
+            password:"123456",
         }
     },
     methods:{
