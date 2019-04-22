@@ -1,71 +1,51 @@
 <template>
   <el-main style="width:99%">
-    <a-card class="data-list">
-      <a-row>
-        <a-col :span="8">总销售额</a-col>
-        <a-col :span="2" :offset="14">
-          <a-tooltip placement="top">
-            <template slot="title">
-              <span>指标说明</span>
-            </template>
-            <a-icon type="info-circle" />
-          </a-tooltip>
-        </a-col>
-      </a-row>
+    <el-card class="data-list">
+      <el-row>
+        <el-col :span="8">总销售额</el-col>
+        <el-col :span="2" :offset="14">
+          
+        </el-col>
+      </el-row>
       <p style="font-size:20px;font-weight:bold">￥123133</p>
       <p>周同比12%
-        <a-icon type="caret-up" style="color:green" /> 日同比2%
-        <a-icon type="caret-down" style="color:red" />
+        日同比2%
+        
       </p>
-    </a-card>
-    <a-card class="data-list">
-      <a-row>
-        <a-col :span="8">访问量</a-col>
-        <a-col :span="2" :offset="14">
-          <a-tooltip placement="top">
-            <template slot="title">
-              <span>指标说明</span>
-            </template>
-            <a-icon type="info-circle" />
-          </a-tooltip>
-        </a-col>
-      </a-row>
+    </el-card>
+    <el-card class="data-list">
+      <el-row>
+        <el-col :span="8">访问量</el-col>
+        <el-col :span="2" :offset="14">
+          
+        </el-col>
+      </el-row>
       <div class="chart-wrapper">
         <canvas id="mountNode" style="width:100%;"></canvas>
       </div>
-    </a-card>
-    <a-card class="data-list">
-      <a-row>
-        <a-col :span="8">访问量</a-col>
-        <a-col :span="2" :offset="14">
-          <a-tooltip placement="top">
-            <template slot="title">
-              <span>指标说明</span>
-            </template>
-            <a-icon type="info-circle" />
-          </a-tooltip>
-        </a-col>
-      </a-row>
+    </el-card>
+    <el-card class="data-list">
+      <el-row>
+        <el-col :span="8">访问量</el-col>
+        <el-col :span="2" :offset="14">
+          
+        </el-col>
+      </el-row>
       <div class="chart-wrapper">
         <canvas id="mountNode1" style="width:100%"></canvas>
       </div>
-    </a-card>
-    <a-card class="data-list">
-      <a-row>
-        <a-col :span="8">访问量</a-col>
-        <a-col :span="2" :offset="14">
-          <a-tooltip placement="top">
-            <template slot="title">
-              <span>指标说明</span>
-            </template>
-            <a-icon type="info-circle" />
-          </a-tooltip>
-        </a-col>
-      </a-row>
+    </el-card>
+    <el-card class="data-list">
+      <el-row>
+        <el-col :span="8">访问量</el-col>
+        <el-col :span="2" :offset="14">
+         
+        </el-col>
+      </el-row>
       <div class="chart-wrapper">
         <canvas id="mountNode3" style="width:100%"></canvas>
       </div>
-    </a-card>
+    </el-card>
   </el-main>
 </template>
 

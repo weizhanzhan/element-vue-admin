@@ -1,29 +1,29 @@
 <template>
-  <a-row style="background:#fff;padding:10px" class="start-header">
-    <a-col :span="2" style="text-align:center">
-      <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" :size="80" />
-    </a-col>
-    <a-col :span="16">
+  <el-row style="background:#fff;padding:10px" class="start-header">
+    <el-col :span="2" style="text-align:center">
+      <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" width="80" style="border-radius:50%" />
+    </el-col>
+    <el-col :span="16">
       <div class="top-text-hello">早上好,weizhan</div>
       <div class="top-text-info">管理员 | 魏展展 常州阿摩勒信息科技有限公司web前端工程师</div>
-    </a-col>
-    <a-col :span="6">
-      <a-row>
-        <a-col :span="8" class="project-list">
+    </el-col>
+    <el-col :span="6">
+      <el-row>
+        <el-col :span="8" class="project-list">
           <span>项目数</span>
           <div>10</div>
-        </a-col>
-        <a-col :span="8" class="project-list">
+        </el-col>
+        <el-col :span="8" class="project-list">
           <span>团队排名</span>
           <div>10/24</div>
-        </a-col>
-        <a-col :span="8" class="project-list">
+        </el-col>
+        <el-col :span="8" class="project-list">
           <span>项目访问</span>
           <div>1000</div>
-        </a-col>
-      </a-row>
-    </a-col>
-  </a-row>
+        </el-col>
+      </el-row>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

@@ -21,7 +21,7 @@
 
 <script>
 import { login } from '@/api/user'
-import User from '@/design/login'
+import User from '@/utils/design/login'
 import qs from 'qs'
 export default {
     data(){

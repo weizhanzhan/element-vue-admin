@@ -1,6 +1,6 @@
 <template>
     <el-header >         
-        <div class="wrapper-left" style=" font-size: 12px;padding:0;display:flex">
+        <div class="wrapper-left">
             <div 
                 v-if="!leftMenuStatus"
                 class="iconfont menu-fold" 
@@ -92,7 +92,6 @@ export default {
      cursor: pointer;
  }
  .el-header {
-    /* background-color: #373d41; 333744*/
     background-color: #ffffff;
     color: #fff;
     line-height: 60px;
@@ -101,6 +100,7 @@ export default {
   }
   .wrapper-left{
       float: left;
+       font-size: 12px;padding:0;display:flex
   }
   .wrapper-left img{
       height: 60px;
@@ -111,101 +111,5 @@ export default {
       height: 60px;
       margin:0;padding:0;font-size: 0;
       
-  }
-  .right-info{
-      display:inline-block;
-      font-size: 18px;
-      width: 60px;
-      height: 60px;
-      text-align: center
-
-  }
-  .right-info img{
-      width: 36px;
-      height: 36px;
-      border-radius: 18px;
-      vertical-align: middle;
-  }
-  .right-msg{
-      display:inline-block;
-      font-size: 18px;
-      width: 60px;
-      height: 60px;
-      text-align: center
-  }
-  .msg-num{
-    font-size: 10px;
-    background: red;
-    padding:2px;
-    border-radius: 4px;
-  }
-  .right-input{
-      display: inline-block;
-      padding:  0 15px
-  }
-  .info-dropdown{
-      position: absolute;
-      right: 0;
-      background:#fff;
-      z-index: 1;
-      width: 20%;
-      color: black;
-      border: 1px solid #eee;
-      box-shadow: 0 1px 3px rgba(0,0,0,.2);
-      
-  }
-  .info-avatar{
-      text-align: center;
-      border-bottom: 1px solid #eaeaea;
-  }
-  .info-item{
-      font-size: 10px;
-      /* display: flex; */
-      display: table;
-      width: 100%;
-      border-bottom: 1px solid #eaeaea;
-      
-  }
-  .item-list{
-      width: 100%;
-      float: left;
-      width: 33.3%;
-  }
-  .item-back{
-      width: 100%;
-      font-size: 15px;
-      background: #f5f5f6
-  }
-  .num-dropdown{
-      position: absolute;
-      background: #fff;
-      right: 4%;
-      z-index: 1;
-      border: 1px solid #eee;
-      color: #000;
-
-      box-shadow: 0 1px 3px rgba(0,0,0,.2);
-      
-  }
-  .num-items{
-      width: 250px;
-      height: 300px;
-      white-space: nowrap;
-      overflow-x: scroll;  
-            /* 内容会被裁剪，会以滚动条显示 */ 
-      overflow-y: scroll;  /* 超出内容不可见 */ 
-      white-space: nowrap;  /* 不换行 */ 
-      text-align: left
-  }
-  .num-item{
-      font-size: 10px;
-      /* display: flex; */
-      display: table;
-      padding: 0 2px;
-      width: 100%;
-      border-bottom: 1px solid #eaeaea;
-  }
-  .num-list{
-      border-bottom: 1px solid #eaeaea;
   }
 </style>

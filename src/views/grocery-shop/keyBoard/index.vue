@@ -1,14 +1,11 @@
 <template>
   <el-container>
     <el-main>
-        <a-card title="自己做得软键盘">
-            <el-row>
-                <input @focus="changeFocus" id="test6" v-model="test6">
-                <input @focus="changeFocus" id="test7" v-model="test7">
-                <key-board :id.sync="id" @refesh="refesh"> </key-board>
-            </el-row>
-        </a-card>
-      
+      <el-row>
+          <input @focus="changeFocus" id="test6" v-model="test6">
+          <input @focus="changeFocus" id="test7" v-model="test7">
+          <key-board :id.sync="id" @refesh="refesh"> </key-board>
+      </el-row>
     </el-main>
   </el-container>
 </template>

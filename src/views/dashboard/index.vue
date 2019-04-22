@@ -25,14 +25,6 @@ import TeamList from './team-list'
 import StartHearder from './header'
 import HeadCard from './head-card'
 export default {
-    data(){
-        return {
-         
-        }
-    },
-    created(){
-        this.$test()
-    },
     components:{
         MyProject,
         BlogList,
@@ -46,10 +38,8 @@ export default {
 <style>
 
 .index-head{
-    width: 100%;
-    
+    width: 100%;   
 }
-
 .head-content{
     background-color: #f0f2f5!important
 }
@@ -63,7 +53,7 @@ export default {
     flex: 1
 }
 
- @media screen and (max-width:900px){
+@media screen and (max-width:900px){
     .head-content-main{
         display: inline-block
     }

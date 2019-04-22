@@ -1,7 +1,7 @@
 <template>
     <el-container> 
         <el-main > 
-            <a-card title="我这可以生成二维码">
+           
                 <el-row>
                     <el-col :span="6"><el-input v-model="input" placeholder="请输入内容"></el-input></el-col>
                     <el-col :span="6" style="padding:.3rem .5rem">
@@ -11,9 +11,7 @@
                 </el-row>
             <!-- <vue-qr :bgSrc='src' :logoSrc="src2" text="Hello world!" :size="200"></vue-qr> -->
             <vue-qr :text="text" :callback="test" qid="testid"></vue-qr>
-            </a-card>
-        
-            
+     
            
         </el-main>
     </el-container>

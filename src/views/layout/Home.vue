@@ -2,7 +2,7 @@
     <div style="display:flex;">
         <menu-list></menu-list>
         <el-container style="min-height:100vh" >
-            <el-header style="text-align: right; font-size: 12px;padding:0;box-shadow: 0 1px 4px rgba(0,21,41,.08);">
+            <el-header class="home-header">
                 <menu-header ></menu-header>   
             </el-header>
             <div style="width:100%;background-color: #eee;margin-top:12px">
@@ -33,7 +33,6 @@
 <script>
 import MenuHeader from './component/header/header'
 import MenuList from './component/list/list'
-import MenuContent from './component/index'
 import { mapGetters, mapActions } from 'vuex'
 export default {
      name:"Home",
@@ -41,7 +40,6 @@ export default {
   
          MenuHeader,
          MenuList,
-         MenuContent
      },
      data(){
          return{
@@ -58,18 +56,18 @@ export default {
      watch:{
          '$route':{
              handler(){
-             
+                 console.log(this.$route)
                 let matched = this.$route.matched.filter(item => item.name)
             
                 let firstName=matched[0]
               
         
                 this.levelList=[]
-                if(firstName.name=='主页'){
+                if(firstName.name=='Dashboard'){
                    
                     this.levelList.push(firstName)
                 }else{
-                    this.levelList=[{path:'/',name:'主页'}].concat(matched)
+                    this.levelList=[{path:'/',name:'Dashboard'}].concat(matched)
                 }
              },
              immediate:true
@@ -80,17 +78,11 @@ export default {
 }
 </script>
 
-<style>
-.contain{
-   position: absolute; 
-   /* top: 60px; */
-   top: 0;
-   bottom: 0;
-   width: 100%;
-   
-}
-.con{
-    display:block;
-    position: relative;
+<style scoped>
+
+.home-header{
+    text-align: right; 
+    font-size: 12px;
+    padding:0;box-shadow: 0 1px 4px rgba(0,21,41,.08)
 }
 </style>

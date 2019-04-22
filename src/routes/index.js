@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from "../pages/layout/home"
-import User from "../pages/users/users"
-import Blogs from "../pages/blogs/blogs"
-import Message from '../pages/leave-message/message'
-import Category from '../pages/blogs/categories'
-import info from '../pages/info'
-import Login from '../pages/Login'
-import WriteBlogs from '../pages/blogs/write'
+import Home from "../views/layout/home"
+import User from "../views/users/users"
+import Blogs from "../views/blogs/blogs"
+import Message from '../views/leave-message/message'
+import Category from '../views/blogs/categories'
+import info from '../views/account'
+import Login from '../views/Login'
+import WriteBlogs from '../views/blogs/write'
 
 Vue.use(VueRouter)
 
@@ -19,21 +19,21 @@ export const constantRouterMap =[
         name:"登陆",
         hidden: true
     },
-    {path:'/',redirect:'/start/index',hidden:true},
+    {path:'/',redirect:'/dashboard',hidden:true},
     {
-        path:"/start/index",
-        name:"主页",
+        path:"/dashboard",
+        name:"Dashboard",
         component:Home,
-        redirect:'/start/index',
+        redirect:'/dashboard/index',
         meta: {
             roles: ['admin'], // you can set roles in root nav
             icon:'el-icon-location'
         },
         children:[
             {
-                path:"/start/index",
-                name:"初始",
-                component:()=>import('../pages/start'),
+                path:"/dashboard/index",
+                name:"DashboardIndex",
+                component:()=>import('../views/dashboard'),
                 meta: {
                     roles: ['admin'] // you can set roles in root nav
                 },
@@ -43,7 +43,7 @@ export const constantRouterMap =[
     {
         path:'/register',
         hidden: true,
-        component:()=>import('../pages/login/register'),
+        component:()=>import('../views/login/register'),
         name:"zhuce"
     },
   
@@ -54,18 +54,18 @@ export default new VueRouter({
 })
 export const asyncRouterMap = [
     {
-        path:"/users/guanli",
-        name:"用户",
+        path:"/users",
+        name:"User",
         component:Home,
-        redirect:'users/guanli',
+        redirect:'users/admin',
         meta: {
             roles: ['admin'], // you can set roles in root nav
             icon:'el-icon-menu'
         },
         children:[
             {
-                path:"/users/guanli",
-                name:"用户管理",
+                path:"/users/admin",
+                name:"Admin",
                 component:User,
                 meta: {
                     roles: ['admin'] ,// you can set roles in root nav
@@ -76,17 +76,17 @@ export const asyncRouterMap = [
     },
     {
         path:"/blogs",
-        name:"博客",
+        name:"Blog",
         component:Home,
-        redirect:'/blogs/guanli',
+        redirect:'/blogs/admin',
         meta: {
             roles: ['admin'], // you can set roles in root nav
             icon:'el-icon-search'
         },
         children:[
             {
-                path:"/blogs/guanli",
-                name:"博客管理",
+                path:"/blogs/admin",
+                name:"Admin",
                 component:Blogs,
                 meta: {
                     roles: ['admin'],
@@ -94,8 +94,8 @@ export const asyncRouterMap = [
                 },
             },
             {
-                path:"/blogs/fenlei",
-                name:"博客分类",
+                path:"/blogs/category",
+                name:"Category",
                 component:Category,
                 meta: {
                     roles: ['admin','user'] ,
@@ -103,8 +103,8 @@ export const asyncRouterMap = [
                 },
             },
             {
-                path:"/blogs/write",
-                name:"写博客",
+                path:"/blogs/create",
+                name:"Create",
                 component:WriteBlogs,
                 meta: {
                     roles: ['admin'],
@@ -114,17 +114,17 @@ export const asyncRouterMap = [
         ]
     },
     {
-        path:"/message/guanli",
-        name:"留言",
+        path:"/message/admin",
+        name:"Message",
         component:Home,
-        redirect:'/message/guanli',
+        redirect:'/message/admin',
         meta: {
             roles: ['admin'], // you can set roles in root nav,
             icon:'el-icon-edit'
         },
         children:[
             {
-                path:"/message/guanli",
+                path:"/message/admin",
                 name:"留言管理",
                 component:Message,
                 meta: {
@@ -135,17 +135,17 @@ export const asyncRouterMap = [
         ]
     },
     {
-        path:"/yours/info",
-        name:"个人",
+        path:"/account",
+        name:"Account",
         component:Home,
-        redirect:'/yours/info',
+        redirect:'/account/info',
         meta: {
             roles: ['admin','user'] ,// you can set roles in root nav
             icon:'el-icon-service'
         },
         children:[
             {
-                path:'/yours/info',
+                path:'/account/info',
                 name:"个人信息",
                 component:info,
                 meta: {
@@ -157,73 +157,73 @@ export const asyncRouterMap = [
     },
   
     {
-        path:"/grocery",
-        name:"组件",
+        path:"/components",
+        name:"components",
         component:Home,
-        redirect:'/plugin/index',
+        redirect:'/components/toast',
         meta: {
             roles: ['admin','user'] ,// you can set roles in root nav
             icon:'el-icon-printer'
         },
         children:[
             {
-                path:'/grocery/toast',
-                name:"Toast插件",
-                component:()=>import('../pages/grocery-shop/pluginTest'),
+                path:'/components/toast',
+                name:"Toast",
+                component:()=>import('../views/grocery-shop/pluginTest'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
             },
             {
-                path:'/grocery/Qr',
-                name:"二维码生成",
-                component:()=>import('../pages/grocery-shop/qrcode'),
+                path:'/components/Qr',
+                name:"QR code",
+                component:()=>import('../views/grocery-shop/qrcode'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
             },
             {
-                path:'/grocery/keyboard',
-                name:"虚拟键盘",
-                component:()=>import('../pages/grocery-shop/keyBoard'),
+                path:'/components/keyboard',
+                name:"keyBoard",
+                component:()=>import('../views/grocery-shop/keyBoard'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
             },
             {
-                path:'/grocery/dialog',
+                path:'/components/dialog',
                 name:"Dialog",
-                component:()=>import('../pages/grocery-shop/dialog'),
+                component:()=>import('../views/grocery-shop/dialog'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
             },
             {
-                path:'/grocery/merry-go-round',
-                name:"旋转木马",
-                component:()=>import('../pages/grocery-shop/merry-go-round'),
+                path:'/components/merry-go-round',
+                name:"merryGoRound",
+                component:()=>import('../views/grocery-shop/merry-go-round'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
             },
             {
-                path:'/grocery/form',
+                path:'/components/form',
                 name:'Form',
-                component:()=>import('../pages/grocery-shop/form'),
+                component:()=>import('../views/grocery-shop/form'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
             },
             {
-                path:'/grocery/input-tree',
+                path:'/components/input-tree',
                 name:'inputTree',
-                component:()=>import('../pages/grocery-shop/input-tree'),
+                component:()=>import('../views/grocery-shop/input-tree'),
                 meta: {
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'

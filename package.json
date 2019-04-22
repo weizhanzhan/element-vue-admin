@@ -12,7 +12,6 @@
   "dependencies": {
     "@antv/f2": "^3.3.4",
     "@antv/g2": "^3.4.9",
-    "ant-design-vue": "^1.1.7",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "element-ui": "^2.7.2",

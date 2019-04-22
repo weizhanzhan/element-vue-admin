@@ -1,7 +1,7 @@
 <template>
-  <a-card title="浏览器访问量排名" class="blogs" >
+  <el-card title="浏览器访问量排名" class="blogs" >
        <div id="mountNode2" ></div>
-    </a-card>
+    </el-card>
 </template>
 
 <script>
