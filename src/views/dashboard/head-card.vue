@@ -359,7 +359,7 @@
   }
 
   .data-list:not(:last-child) {
-    margin-right: 0.5%
+    margin-right: 0.3%
   }
   @media screen and (max-width:900px){
     .data-list {

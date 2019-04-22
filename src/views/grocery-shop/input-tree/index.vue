@@ -2,7 +2,6 @@
     <div class="container" @click.self="selfClick">
         <h1>input - tree</h1>
         <div>
-            <el-input v-model="input" placeholder="请输入内容"></el-input>
              <el-popover
                 placement="bottom"
                 title="标题"
