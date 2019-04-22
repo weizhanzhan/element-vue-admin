@@ -1,6 +1,6 @@
 # Element-vue-admin
 ![Image text](https://github.com/weizhanzhan/vue-admin/blob/master/static/index.png)
-利用Vue2.0+vue-router+axios+vuex+ant-design-vue 后台管理系统
+利用Vue2.0+vue-router+axios+vuex+elementUI 后台管理系统
 # 演示地址
 <a href="http://zhanwei.xyz/zhanwei/element-vue-admin/index.html">element-vue-admin</a>
 
