@@ -3,7 +3,9 @@
     <el-main>
       <el-row>
       
-        <Form :options="options" />
+        <!-- <Form :options="options" /> -->
+        <!-- <Dragger/> -->
+        <MyDragger/>
       </el-row>
     </el-main>
   </el-container>
@@ -14,8 +16,10 @@
     getMine
   } from '@/api/user'
   import Form from './components/filter'
+  import Dragger from './components/dragger.vue'
+  import MyDragger from './components/my-dragger.vue'
   export default {
-    components:{Form},
+    components:{Form,Dragger,MyDragger},
     data() {
       return {
     

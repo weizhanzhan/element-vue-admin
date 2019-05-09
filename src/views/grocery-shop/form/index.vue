@@ -1,7 +1,5 @@
 <template>
     <div class="form">
-      
-       
         <div class="form-item">
              <h1>FormComponents组件表单：</h1>
               <ul>

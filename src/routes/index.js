@@ -228,6 +228,15 @@ export const asyncRouterMap = [
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
+            },
+            {
+                path:'/components/calendar',
+                name:'calendar',
+                component:()=>import('../views/grocery-shop/calendar'),
+                meta: {
+                    roles: ['admin','user'] ,
+                    icon:'el-icon-printer'
+                },
             }
         ]
     },

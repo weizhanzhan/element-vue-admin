@@ -15,11 +15,14 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "element-ui": "^2.7.2",
+    "himmas-vue-calendar": "^1.3.3",
     "js-cookie": "^2.2.0",
     "mavon-editor": "^2.7.3",
     "vue": "^2.5.2",
+    "vue-js-grid": "^1.0.1",
     "vue-qr": "^1.5.2",
     "vue-router": "^3.0.1",
+    "vue-sauce": "^0.0.4",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
