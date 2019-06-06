@@ -34,13 +34,20 @@
 <script>
 
 import { mapGetters } from 'vuex'
-
+ import generateColors from '../../../../utils/color'
+ import objectAssign from 'object-assign'
 export default {
     name:"home-header",
     data(){
         return{
             selectid:"",
-            color1:'#333744'
+            color1:'#333744',
+            primaryColor:'#333744',
+            colors: {
+                primary: '#409eff'
+            },
+            originalStyle:'',
+            originalStylesheetCount:-1
         }
     },
     computed : {
@@ -66,10 +73,87 @@ export default {
             this.$store.dispatch('logout').then(data=>{
                 location.reload()
             })
+        },
+        getStyleTemplate (data) {
+            const colorMap = {
+            '#3a8ee6': 'shade-1',
+            '#409eff': 'primary',
+            '#53a8ff': 'light-1',
+            '#66b1ff': 'light-2',
+            '#79bbff': 'light-3',
+            '#8cc5ff': 'light-4',
+            '#a0cfff': 'light-5',
+            '#b3d8ff': 'light-6',
+            '#c6e2ff': 'light-7',
+            '#d9ecff': 'light-8',
+            '#ecf5ff': 'light-9'
+            }
+            Object.keys(colorMap).forEach(key => {
+            const value = colorMap[key]
+            data = data.replace(new RegExp(key, 'ig'), value)
+            })
+            return data
+        },
+        getFile (url, isBlob = false) {
+            return new Promise((resolve, reject) => {
+                const client = new XMLHttpRequest()
+                client.responseType = isBlob ? 'blob' : ''
+                client.onreadystatechange = () => {
+                    if (client.readyState !== 4) {
+                    return
+                    }
+                    if (client.status === 200) {
+                    const urlArr = client.responseURL.split('/')
+                    resolve({
+                        data: client.response,
+                        url: urlArr[urlArr.length - 1]
+                    })
+                    } else {
+                    reject(new Error(client.statusText))
+                    }
+                }
+                client.open('GET', url)
+                client.send()
+            })
+        },
+
+        getIndexStyle () {
+            this.getFile('//unpkg.com/element-ui/lib/theme-chalk/index.css')
+                .then(({ data }) => {           
+                    this.originalStyle = this.getStyleTemplate(data)
+                 })
+        },
+        writeNewStyle(){
+            let cssText = this.originalStyle
+  
+            Object.keys(this.colors).forEach(key => {
+                cssText = cssText.replace(new RegExp('(:|\\s+)' + key, 'g'), '$1' + this.colors[key])
+            })
+            if (this.originalStylesheetCount === document.styleSheets.length) {
+                const style = document.createElement('style')
+                style.innerText = cssText
+                document.head.appendChild(style)
+            } else {
+                document.head.lastChild.innerText = cssText
+            }
         }
+    },
+    created(){
+        this.getIndexStyle()
+    },
+     mounted () {
+      this.$nextTick(() => {
+        this.originalStylesheetCount = document.styleSheets.length
+      })
     },
     watch:{
         color1(color){
+            this.primaryColor = color
+            this.colors.primary = color
+
+            this.colors = objectAssign({}, this.colors, generateColors(this.colors.primary))
+         
+            this.writeNewStyle()
             this.$store.dispatch('changeMenuColor',color)
         }
     }

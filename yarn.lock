@@ -980,6 +980,11 @@ babylon@^6.18.0:
   version "6.18.0"
   resolved "http://registry.npm.taobao.org/babylon/download/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
 
+balanced-match@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.1.0.tgz#b504bd05869b39259dd0c5efc35d843176dccc4a"
+  integrity sha1-tQS9BYabOSWd0MXvw12EMXbczEo=
+
 balanced-match@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
@@ -1708,6 +1713,16 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
+css-color-function@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/css-color-function/-/css-color-function-1.3.3.tgz#8ed24c2c0205073339fafa004bc8c141fccb282e"
+  integrity sha1-jtJMLAIFBzM5+voAS8jBQfzLKC4=
+  dependencies:
+    balanced-match "0.1.0"
+    color "^0.11.0"
+    debug "^3.1.0"
+    rgb "~0.1.0"
+
 css-color-names@0.0.4:
   version "0.0.4"
   resolved "http://registry.npm.taobao.org/css-color-names/download/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
@@ -2107,10 +2122,10 @@ electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.47:
   version "1.3.52"
   resolved "http://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.52.tgz#d2d9f1270ba4a3b967b831c40ef71fb4d9ab5ce0"
 
-element-ui@^2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-2.7.2.tgz#8bc5bef5c3c53a2170422516b4324e70069c23d1"
-  integrity sha512-Exh9QTkm9gwMMPzg1TyaTlBKyr3k4K9XcC5vl0A/mneDvJX//RsURGuOWsCNDVQMdhh5h9e+W5icosh+pKfbCg==
+element-ui@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-2.9.1.tgz#a05f2e76023d529ba0dfa2d03ae16e5134b20c4e"
+  integrity sha512-w8vrCW5Q+2gfDzs19MUrFdnCy5IjF98rs7DBsKnJQKFfZJZiZ2O+YAsSp/EuPrCm3P/2o/N3MtvZ34VANel13g==
   dependencies:
     async-validator "~1.8.1"
     babel-helper-vue-jsx-merge-props "^2.0.0"
@@ -3953,7 +3968,8 @@ number-is-nan@^1.0.0:
 
 object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
-  resolved "http://registry.npm.taobao.org/object-assign/download/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
+  integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
 object-copy@^0.1.0:
   version "0.1.0"
@@ -5047,6 +5063,11 @@ resumer@~0.0.0:
 ret@~0.1.10:
   version "0.1.15"
   resolved "http://registry.npm.taobao.org/ret/download/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
+
+rgb@~0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/rgb/-/rgb-0.1.0.tgz#be27b291e8feffeac1bd99729721bfa40fc037b5"
+  integrity sha1-vieykej+/+rBvZlylyG/pA/AN7U=
 
 right-align@^0.1.1:
   version "0.1.3"
