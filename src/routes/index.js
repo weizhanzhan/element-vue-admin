@@ -237,6 +237,15 @@ export const asyncRouterMap = [
                     roles: ['admin','user'] ,
                     icon:'el-icon-printer'
                 },
+            },
+            {
+                path:'/components/attr',
+                name:'attr',
+                component:()=>import('../views/grocery-shop/attr'),
+                meta: {
+                    roles: ['admin','user'] ,
+                    icon:'el-icon-printer'
+                },
             }
         ]
     },

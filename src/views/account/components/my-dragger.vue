@@ -1,6 +1,7 @@
 <template>
     <div  class="container">
-    <!-- <transition-group tag="div" class="container"> -->
+    <transition-group tag="div" class="container">
+   
         <template  v-for="item in items" >
             <div 
                
@@ -10,6 +11,8 @@
                 @dragstart="onDragstart($event,item)"
                 @dragend="onDragend($event,item)"
                 @dragenter="onDragenter($event,item)"
+                @drag="onDrag"
+                v-drag="item"
                 class="item"
            
             >
@@ -17,7 +20,7 @@
         </div>
         </template>
         
-    <!-- </transition-group> -->
+    </transition-group>
     </div>
 </template>
 
@@ -34,8 +37,19 @@ export default {
             enterDragging :null
         }
     },
+    directives:{
+        drag:{
+            inserted: function (el) {
+                console.log(el.clientTop)
+            }
+        }
+    },
     methods:{
+        hand(e){
+            console.log(e)
+        },
         onDragstart(e,item){
+            console.log(e)
             this.dragging = item
          
         },
@@ -45,10 +59,13 @@ export default {
            
 
         },
+        onDrag(e){
+            console.log(e.layerX,e.layerY )
+        },
         onDragend(e,item){
-            console.log(item)
+          console.log(e.target.clientTop)
             if(this.enterDragging.key === this.dragging.key){
-                console.log('没有和别人换位')
+                this.handleNoDragger(e,item)
                 return
             }
             let allItem  =  JSON.parse(JSON.stringify(this.items))
@@ -66,6 +83,13 @@ export default {
             this.items = allItem
             this.dragging = null
              this.enterDragging  = null
+        },
+        handleNoDragger(event,item){
+            event.target.style.position="absolute"
+            event.target.style.top=event.clientY-200+'px'
+            event.target.style.left=event.clientX-200+'px'
+            console.log(event,item)
+            console.log('没有和别人换位')
         }
     }
 }

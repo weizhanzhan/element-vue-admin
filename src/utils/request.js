@@ -7,6 +7,24 @@ const service = axios.create({
     baseURL:"http://111.231.59.56:5000/api",            //process.env.VUE_APP_BASE_API , // api的base_url 
   //  timeout: 15000 
 })
+
+
+let pending = [];
+let cancelToken = axios.CancelToken;
+let cancelPending = (config) => {
+pending.forEach((item, index) => {
+    console.log(!!config)
+    if(!!config){
+        if(item.u == config.url){
+            item.f(); //取消请求
+            pending.splice(index, 1); //移除当前请求记录
+        };
+    }else{
+        item.f(); //取消请求
+        pending.splice(index, 1); //移除当前请求记录
+        }
+    });
+};
 // http request 请求拦截器，有token值则配置上token值
 service.interceptors.request.use(
     config => {
@@ -14,6 +32,10 @@ service.interceptors.request.use(
         if (token) {  // 每次发送请求之前判断是否存在token，如果存在，则统一在http请求的header都加上token，不用每次请求都手动添加了
              config.headers['Authorization'] = token
         }
+        cancelPending(config);
+        config.cancelToken = new cancelToken((c) => {
+            pending.push({'u': config.url, 'f': c});
+        });
         store.dispatch('cancelLoading',true)
         return config;
     },
@@ -25,6 +47,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
     response => {
         store.dispatch('cancelLoading',false)
+        cancelPending(response.config);
         return response;
     },
     error => {
@@ -35,12 +58,9 @@ service.interceptors.response.use(
                     store.dispatch('cancelLoading',false)
                     removeToken()
                     router.replace({path:'/login'})
-                    // router.replace({
-                    //     path: 'login',
-                    //     query: {redirect: router.currentRoute.fullPath}//登录成功后跳入浏览的当前页面
-                    // })
             }
         }
+        console.log(error)
         store.dispatch('cancelLoading',false)
         return Promise.reject(error.response.data) 
     });

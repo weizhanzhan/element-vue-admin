@@ -5,7 +5,9 @@
       
         <!-- <Form :options="options" /> -->
         <!-- <Dragger/> -->
-        <MyDragger/>
+        <!-- <MyDragger/> -->
+        <!-- <gridDragger/> -->
+        <LongRangeJS src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></LongRangeJS>
       </el-row>
     </el-main>
   </el-container>
@@ -18,8 +20,10 @@
   import Form from './components/filter'
   import Dragger from './components/dragger.vue'
   import MyDragger from './components/my-dragger.vue'
+  import gridDragger from './components/grid-drag.vue'
+  import LongRangeJS from '../grocery-shop/long-range-js'
   export default {
-    components:{Form,Dragger,MyDragger},
+    components:{Form,Dragger,MyDragger,gridDragger ,LongRangeJS},
     data() {
       return {
     
