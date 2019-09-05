@@ -26,12 +26,12 @@ import 'mavon-editor/dist/css/index.css'
 Vue.use(mavonEditor)
 //测试插件
 
-//import './Plugin/style/index.css' //插件全局样式
+ import './views/grocery-shop/style/index.css' //插件全局样式
 
-// import Toast from './Plugin/toast/lib'
+ import Toast from './views/grocery-shop/toast/lib'
 // import Dialog from './Plugin/dialog/lib'
 // import Test from './Plugin/test/lib'
-// Vue.use(Toast)
+ Vue.use(Toast)
 // Vue.use(Test)
 // Vue.use(Dialog)
 
